@@ -22,6 +22,8 @@ ngOnInit():void{
 
 login(){
   this.accountService.login(this.model).subscribe(response =>{
+    console.log(this.model);
+    
     this.router.navigateByUrl('/members');
   })
 } 

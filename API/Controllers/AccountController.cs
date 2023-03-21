@@ -16,11 +16,12 @@ namespace API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-        public ITokenService _tokenService { get; }
+        private readonly ITokenService _tokenService;
         public AccountController(DataContext context, ITokenService tokenService){
             _tokenService = tokenService;
             _context = context;
         } 
+        
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto){
             if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");

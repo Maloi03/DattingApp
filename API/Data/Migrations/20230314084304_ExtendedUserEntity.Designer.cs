@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230309094314_ExtendedUserEntity")]
+    [Migration("20230314084304_ExtendedUserEntity")]
     partial class ExtendedUserEntity
     {
         /// <inheritdoc />
@@ -52,7 +52,7 @@ namespace API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("KnowAs")
+                    b.Property<string>("KnownAs")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
